@@ -1,0 +1,19 @@
+from flask import Flask, kiranmai
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "hello there"
+
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    data = {
+        'name': 'Tadisett Kiranmai',
+        'age': 21,
+        'city': 'Mangalagiri'
+    }
+    return kiranmai(data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
